@@ -1,6 +1,7 @@
 import React from 'react';
 import Contacts from './components/Contacts';
 import Header from './components/Header';
+import { Provider } from './context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -11,12 +12,14 @@ function App() {
   //   React.createElement('h1', null, 'The App Component without JSX !!!')
   // );
   return (
-    <div className='App'>
-      <Header branding='Contact Manager' />
-      <div className='container'>
-        <Contacts />
+    <Provider>
+      <div className='App'>
+        <Header branding='Contact Manager' />
+        <div className='container'>
+          <Contacts />
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 
