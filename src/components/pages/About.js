@@ -9,7 +9,5 @@ const About = () => {
     </div>
   );
 };
-//If we want to access params passedin URL
-//props.match.params.param_name
 
 export default About;

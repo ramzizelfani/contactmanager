@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context';
 import TextInputGroup from '../layout/TextInputGroup';
-//import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
-//import PropTypes from 'prop-types';
 
 class EditContact extends Component {
   state = {
