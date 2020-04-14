@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a81f24047bf61d317c4fd694210aa78",
+    "revision": "6bddbad1dce9176bd3162983eb7daf88",
     "url": "/contactmanager/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/contactmanager/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "32b77c7d7dfac1cd7147",
+    "revision": "c74cc5ea0f9cb59b97d8",
     "url": "/contactmanager/static/css/main.36497136.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/contactmanager/static/js/2.4a3ed192.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "32b77c7d7dfac1cd7147",
-    "url": "/contactmanager/static/js/main.d54af8ef.chunk.js"
+    "revision": "c74cc5ea0f9cb59b97d8",
+    "url": "/contactmanager/static/js/main.bf67faeb.chunk.js"
   },
   {
     "revision": "71d3a297f4256315968e",
