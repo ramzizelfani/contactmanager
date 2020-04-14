@@ -11,7 +11,7 @@ import { Provider } from './context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <Provider>
       <Router>
@@ -31,6 +31,6 @@ function App() {
       </Router>
     </Provider>
   );
-}
+};
 
 export default App;
