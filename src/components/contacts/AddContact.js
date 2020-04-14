@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context';
 import TextInputGroup from '../layout/TextInputGroup';
-//import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
-//import PropTypes from 'prop-types';
 
 class AddContact extends Component {
   state = {
@@ -16,7 +14,6 @@ class AddContact extends Component {
   onSubmit = async (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone } = this.state;
-    //Check for validation errors
     if (name === '') {
       this.setState({ errors: { name: 'Name is required' } });
       return;
@@ -46,7 +43,6 @@ class AddContact extends Component {
       type: 'ADD_CONTACT',
       payload: response.data,
     });
-    // Clear the state and input fields
     this.setState({
       name: '',
       email: '',

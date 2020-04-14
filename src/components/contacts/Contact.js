@@ -5,18 +5,6 @@ import { Consumer } from '../../context';
 import axios from 'axios';
 
 class Contact extends Component {
-  // you can either define default props and propTypes within the class based component using the key word static or outside the class as shown bellow
-  //   static defaultProps = {
-  //     name: 'new user',
-  //     email: 'nuser@test.test',
-  //     phone: '+216 22 222 222',
-  //   };
-
-  //   static propTypes = {
-  //     name: PropTypes.string.isRequired,
-  //     email: PropTypes.string.isRequired,
-  //     phone: PropTypes.string.isRequired,
-  //   };
   state = {
     showContactInfo: false,
   };
