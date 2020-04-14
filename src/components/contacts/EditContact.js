@@ -5,17 +5,26 @@ import TextInputGroup from '../layout/TextInputGroup';
 import axios from 'axios';
 //import PropTypes from 'prop-types';
 
-class AddContact extends Component {
+class EditContact extends Component {
   state = {
     name: '',
     email: '',
     phone: '',
     errors: {},
   };
+  async componentDidMount() {
+    const { id } = this.props.match.params;
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
+    const { name, email, phone } = response.data;
+    this.setState({ name, email, phone });
+  }
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
   onSubmit = async (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone } = this.state;
+    const { id } = this.props.match.params;
     //Check for validation errors
     if (name === '') {
       this.setState({ errors: { name: 'Name is required' } });
@@ -33,19 +42,23 @@ class AddContact extends Component {
       this.setState({ errors: { phone: 'A phone number is required!' } });
       return;
     }
-    const newContact = {
+    // Update contact here
+    const updatedContact = {
       name,
       email,
       phone,
     };
-    const response = await axios.post(
-      'https://jsonplaceholder.typicode.com/users',
-      newContact
+
+    console.log(id);
+    const response = await axios.put(
+      `https://jsonplaceholder.typicode.com/users/${id}`,
+      updatedContact
     );
     dispatch({
-      type: 'ADD_CONTACT',
+      type: 'UPDATE_CONTACT',
       payload: response.data,
     });
+
     // Clear the state and input fields
     this.setState({
       name: '',
@@ -64,7 +77,7 @@ class AddContact extends Component {
           const { dispatch } = value;
           return (
             <div className='card mb-3'>
-              <div className='card-header'>Add Contact</div>
+              <div className='card-header'>Edit Contact</div>
               <div className='card-body'>
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                   <TextInputGroup
@@ -95,7 +108,7 @@ class AddContact extends Component {
 
                   <input
                     type='submit'
-                    value='Add Contact'
+                    value='Update Contact'
                     className='btn btn-light btn-block'
                   />
                 </form>
@@ -108,4 +121,4 @@ class AddContact extends Component {
   }
 }
 
-export default AddContact;
+export default EditContact;
